@@ -1,0 +1,27 @@
+nav {
+  text-align: center;
+}
+
+.all-prices {
+  height: 26em;
+  width: 10em;
+}
+
+.all-prices option {
+  text-align: right;
+}
+
+.all-names {
+  width: 18em;
+  height: 24em;
+}
+
+.row {
+  margin: 0 auto;
+  width: 60em;
+}
+
+.column {
+  float: left;
+  width: 20em;
+}
