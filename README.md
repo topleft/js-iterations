@@ -65,8 +65,11 @@ For this exercise, in `js/dom.js` you should find the textarea and get its `text
 
 In `js/logic.js`, you should write functions that take in strings, and return arrays.
 
-In `js/dom.js` you should iterate over these results with a `for` loop, and append DOM elements to the answers div.
+In `js/dom.js` you should iterate over these results with a `for` loop, and append DOM elements to the answers div.  This will be the first time you'll need to write a `for` loop in `js/dom.js`.
 
+HINT: you can clear the `ul` by setting `innerHTML` to `null`.
+
+- Users can see a list of names (just wire up the `split`, `appendChild` code...)
 - Users can see a list of first names
 - Users can see a list of last names
 - Users can see a list of names with their lengths in the format ("Joe Smith - 9 ")
