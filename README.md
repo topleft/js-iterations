@@ -1,6 +1,6 @@
-# Working with `for` loops
+# Working with `while` and `for` loops
 
-There's a common pattern with `for` loops where you:
+There's a common pattern with iteration where you:
 
 * assign a variable (the accumulator)
 * iterate over an array or object
@@ -8,6 +8,12 @@ There's a common pattern with `for` loops where you:
 * return the variable
 
 This exercise will give you several chances to practice this pattern.
+
+## Resources
+
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
 
 ## Instructions
 
@@ -41,14 +47,18 @@ In `js/dom.js` write all of your code that will work with the DOM.  For example:
 
 ## Stories
 
-**Prices**
+**(bug) HTML Is Invalid**
+
+- On the index page, the HTML is invalid.  Find and fix it.
+
+**Prices (use `while` loops here)**
 
 - Users can see the sum of all prices
 - Users can see the number of prices that are selected (the count)
 - Users can see the sum of the selected prices
 - Users can see the average of all of the prices
 
-**Names**
+**Names (use `for` loops here)**
 
 As part of this exercise, you'll need to append multiple DOM elements.
 
@@ -76,7 +86,7 @@ HINT: you can clear the `ul` by setting `innerHTML` to `null`.
 
 ## Stretch Goal
 
-Rewrite all functions in `js/logic.js` to not use any `for` loops.  Search MDN for:
+Rewrite all functions in `js/logic.js` to not use any `for` _or_ `while` loops.  Search MDN for:
 
 - `forEach`
 - `map`
