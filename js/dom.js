@@ -11,11 +11,11 @@ Hints for the first problem:
 */
 
 var parsePath = document.location.pathname.split("/");
-var targetDir = parsePath[parsePath.length-1];
+var target = parsePath[parsePath.length-1];
 
 
-if(targetDir === "index.html"){
-//target options
+if(target === "index.html"){
+//retrieve options
 var options = document.getElementsByTagName("option");
 
 
@@ -57,9 +57,65 @@ document.getElementById("count-selected").addEventListener("click", function(){
     "<h4>Count of Selected</h4>"+countSelected(options);
 });
 }
-else if (targetDir === "names.html"){
 
+else if (target === "names.html") {
+
+var text = document.getElementsByTagName("textarea")[0].innerHTML;
+
+
+function parseStringOfNames(string){
+  var newText = text.split("\n");
+  return newText;
 }
+
+
+function trimNames(array){
+  trimmedNames = [];
+  for (var i = 0; i < array.length; i++) {
+    trimmedNames.push(array[i].trim());
+  };
+  return trimmedNames;
+}
+
+function parseNamesIntoArrays(array){
+  parsedNames = [];
+  for (var i = 0; i < array.length; i++) {
+    parsedNames.push(array[i].split(" "));
+  }
+  return parsedNames;
+}
+
+function sortFirstAndLast(array){
+  newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+    if (array[i].length === 3){
+      var last2 = array[i].pop();
+      var last1 = array[i].pop();
+      var last =last1+" "+last2;
+      array[i][1] = last;
+      newArray.push(array[i]);
+    }
+    else{
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+console.log(text);
+var test = (trimNames(parseStringOfNames(text)));
+var test2 = (parseNamesIntoArrays(test));
+console.log(test2)
+console.log(sortFirstAndLast(test2));
+
+// console.log(parseNamesIntoArrays(trimNames(text)));
+}
+
+
+
+
+
 
 
 

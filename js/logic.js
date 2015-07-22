@@ -60,3 +60,5 @@ function averageSelected(options){
   return sum/totalSelected;
 }
 
+// function printAllNames
+
