@@ -10,7 +10,11 @@ Hints for the first problem:
 
 */
 
+var parsePath = document.location.pathname.split("/");
+var targetDir = parsePath[parsePath.length-1];
 
+
+if(targetDir === "index.html"){
 //target options
 var options = document.getElementsByTagName("option");
 
@@ -52,7 +56,10 @@ document.getElementById("count-selected").addEventListener("click", function(){
     document.getElementById("results").innerHTML =
     "<h4>Count of Selected</h4>"+countSelected(options);
 });
+}
+else if (targetDir === "names.html"){
 
+}
 
 
 
