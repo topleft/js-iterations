@@ -60,5 +60,87 @@ function averageSelected(options){
   return sum/totalSelected;
 }
 
-// function printAllNames
 
+// logic for names
+
+
+function parseStringOfNames(string){
+  var newText = text.split("\n");
+  return newText;
+}
+
+
+function trimNames(array){
+  trimmedNames = [];
+  for (var i = 0; i < array.length; i++) {
+    trimmedNames.push(array[i].trim());
+  };
+  return trimmedNames;
+}
+
+function parseNamesIntoArrays(array){
+  parsedNames = [];
+  for (var i = 0; i < array.length; i++) {
+    parsedNames.push(array[i].split(" "));
+  }
+  return parsedNames;
+}
+
+function sortFirstAndLast(array){
+  newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+    if (array[i].length === 3){
+      var last2 = array[i].pop();
+      var last1 = array[i].pop();
+      var last =last1+" "+last2;
+      array[i][1] = last;
+      newArray.push(array[i]);
+    }
+    else if (array[i].length === 1){
+      continue;
+    }
+    else{
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+
+function printAllNames(array) {
+  var string = "";
+  for (var i = 0; i < array.length; i++) {
+     var name = array[i].join(" ");
+     string += '<li>'+name+'</li>';
+  }
+  return string;
+}
+
+function firstNames(array){
+  var string = "";
+  for (var i = 0; i < array.length; i++) {
+     var firstName = array[i][0];
+     string += '<li>'+firstName+'</li>';
+  }
+  return string;
+}
+
+function lastNames(array){
+  var string = "";
+  for (var i = 0; i < array.length; i++) {
+     var lastName = array[i][1];
+     string += '<li>'+lastName+'</li>';
+  }
+  return string;
+}
+
+function namesWithLengths(array) {
+  var string = "";
+  for (var i = 0; i < array.length; i++) {
+     var name = array[i].join(" ");
+     string += '<li>'+name+": "+name.length+'</li>';
+  }
+  return string;
+
+}

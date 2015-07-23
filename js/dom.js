@@ -58,58 +58,52 @@ document.getElementById("count-selected").addEventListener("click", function(){
 });
 }
 
+
+// DOM manipulation for names
 else if (target === "names.html") {
 
 var text = document.getElementsByTagName("textarea")[0].innerHTML;
+var names = sortFirstAndLast(parseNamesIntoArrays(trimNames(parseStringOfNames(text))));
 
 
-function parseStringOfNames(string){
-  var newText = text.split("\n");
-  return newText;
-}
 
 
-function trimNames(array){
-  trimmedNames = [];
-  for (var i = 0; i < array.length; i++) {
-    trimmedNames.push(array[i].trim());
-  };
-  return trimmedNames;
-}
 
-function parseNamesIntoArrays(array){
-  parsedNames = [];
-  for (var i = 0; i < array.length; i++) {
-    parsedNames.push(array[i].split(" "));
-  }
-  return parsedNames;
-}
+// print all names
+document.getElementById("all-names").addEventListener("click",
+  function(){
+    document.getElementById("results").innerHTML =
+      "<h4>All Names</h4>"+printAllNames(names);
+});
 
-function sortFirstAndLast(array){
-  newArray = [];
-  for (var i = 0; i < array.length; i++) {
-    console.log(array[i]);
-    if (array[i].length === 3){
-      var last2 = array[i].pop();
-      var last1 = array[i].pop();
-      var last =last1+" "+last2;
-      array[i][1] = last;
-      newArray.push(array[i]);
-    }
-    else{
-      newArray.push(array[i]);
-    }
-  }
-  return newArray;
-}
+document.getElementById("first-names").addEventListener("click",
+  function(){
+    document.getElementById("results").innerHTML =
+      "<h4>First Names</h4>"+firstNames(names);
+});
 
-console.log(text);
-var test = (trimNames(parseStringOfNames(text)));
-var test2 = (parseNamesIntoArrays(test));
-console.log(test2)
-console.log(sortFirstAndLast(test2));
+document.getElementById("last-names").addEventListener("click",
+  function(){
+    document.getElementById("results").innerHTML =
+      "<h4>Last Names</h4>"+lastNames(names);
+});
 
-// console.log(parseNamesIntoArrays(trimNames(text)));
+document.getElementById("names-with-lengths").addEventListener("click",
+  function(){
+    document.getElementById("results").innerHTML =
+      "<h4>Names & Lengths</h4>"+namesWithLengths(names);
+});
+
+
+
+
+
+  // console.log(text);
+  // var test = sortFirstAndLast(parseNamesIntoArrays(trimNames(parseStringOfNames(text))));
+
+  // var test2 = (parseNamesIntoArrays(test));
+  // console.log(sortFirstAndLast(test2));
+
 }
 
 
