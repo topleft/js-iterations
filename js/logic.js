@@ -142,5 +142,4 @@ function namesWithLengths(array) {
      string += '<li>'+name+": "+name.length+'</li>';
   }
   return string;
-
 }
